@@ -3,12 +3,15 @@ export interface Props {
   project: {
     id: string;
     title: string;
+    author: string;
+    author_img: string;
     category: string;
     description: string;
     images: string[];
     tags: string[];
     status: string;
     features: string[];
+    plan: string;
   };
 }
 
@@ -40,31 +43,35 @@ const categoryColors: Record<string, string> = {
   data-modal
 >
   <!-- Modal Container -->
-  <div class="flex items-center justify-center min-h-screen p-4">
+  <div class="flex items-center justify-center min-h-screen p-2 sm:p-4">
     <div
-      class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl w-full h-[95vh] overflow-hidden transform scale-95 transition-transform duration-300"
+      class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl w-full h-[98vh] sm:h-[95vh] overflow-hidden transform scale-95 transition-transform duration-300"
       data-modal-content
     >
       <!-- Modal Body - Grid Layout -->
       <div class="h-full flex flex-col">
         <!-- Header with Title and Close Button -->
         <div
-          class="flex-shrink-0 p-4 flex justify-between items-center border-b border-gray-100 dark:border-gray-700"
+          class="flex-shrink-0 p-3 sm:p-4 flex justify-between items-start border-b border-gray-100 dark:border-gray-700"
         >
-          <div>
-            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-1">
+          <div class="flex-1 min-w-0 pr-4">
+            <h2
+              class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1 truncate"
+            >
               {project.title}
             </h2>
-            <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+            <p
+              class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 line-clamp-2"
+            >
               {project.description}
             </p>
           </div>
           <button
-            class="cursor-pointer text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full flex-shrink-0"
+            class="cursor-pointer text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-1 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full flex-shrink-0"
             data-close-modal
           >
             <svg
-              class="w-6 h-6"
+              class="w-5 h-5 sm:w-6 sm:h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -79,17 +86,17 @@ const categoryColors: Record<string, string> = {
         </div>
 
         <!-- Main Content Area -->
-        <div class="flex-1 flex min-h-0">
-          <!-- Left Side - Main Image -->
-          <div class="flex-1 p-4 flex flex-col">
+        <div class="flex-1 flex flex-col lg:flex-row min-h-0">
+          <!-- Main Image -->
+          <div class="flex-1 p-3 sm:p-4 flex flex-col">
             <div
-              class="flex-1 relative bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
+              class="flex-1 relative bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden min-h-[250px] sm:min-h-[300px]"
             >
               <img
                 id={`main-image-${project.id}`}
                 src={project.images[0]}
                 alt={`${project.title} - Imagen principal`}
-                class="w-full h-full object-cover"
+                class="w-full h-full object-contain"
                 onerror="this.src='/images/placeholder.svg'"
               />
 
@@ -98,11 +105,11 @@ const categoryColors: Record<string, string> = {
                 project.images.length > 1 && (
                   <>
                     <button
-                      class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
+                      class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1.5 sm:p-2 rounded-full hover:bg-opacity-70 transition-all z-10"
                       data-prev-image
                     >
                       <svg
-                        class="w-5 h-5"
+                        class="w-4 h-4 sm:w-5 sm:h-5"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -116,11 +123,11 @@ const categoryColors: Record<string, string> = {
                       </svg>
                     </button>
                     <button
-                      class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
+                      class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1.5 sm:p-2 rounded-full hover:bg-opacity-70 transition-all z-10"
                       data-next-image
                     >
                       <svg
-                        class="w-5 h-5"
+                        class="w-4 h-4 sm:w-5 sm:h-5"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -139,7 +146,7 @@ const categoryColors: Record<string, string> = {
 
               <!-- Image Counter -->
               <div
-                class="absolute bottom-4 right-4 bg-black bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-70 text-white px-3 py-1 rounded-full text-sm"
+                class="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 bg-black bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-70 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm"
               >
                 <span id={`image-counter-${project.id}`}>1</span> / {
                   project.images.length
@@ -148,9 +155,9 @@ const categoryColors: Record<string, string> = {
             </div>
           </div>
 
-          <!-- Right Side - Thumbnails and Info -->
+          <!-- Sidebar - Thumbnails and Info -->
           <div
-            class="w-80 p-4 flex flex-col border-l border-gray-100 dark:border-gray-700"
+            class="w-full lg:w-80 p-3 sm:p-4 flex flex-col border-t lg:border-t-0 lg:border-l border-gray-100 dark:border-gray-700 max-h-[40vh] lg:max-h-none overflow-y-auto"
           >
             <!-- Thumbnails -->
             {
@@ -159,10 +166,10 @@ const categoryColors: Record<string, string> = {
                   <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">
                     Imágenes ({project.images.length})
                   </h3>
-                  <div class="grid grid-cols-3 gap-2 max-h-48 overflow-y-auto">
+                  <div class="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-3 gap-1 sm:gap-2 max-h-32 sm:max-h-48 overflow-y-auto">
                     {project.images.map((image, index) => (
                       <button
-                        class="relative aspect-square bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-purple-500 dark:hover:ring-purple-400 transition-all thumbnail-btn"
+                        class="relative aspect-square bg-gray-100 dark:bg-gray-800 rounded-md lg:rounded-lg overflow-hidden hover:ring-2 hover:ring-purple-500 dark:hover:ring-purple-400 transition-all thumbnail-btn"
                         data-image-index={index}
                         data-thumbnail
                       >
@@ -180,7 +187,7 @@ const categoryColors: Record<string, string> = {
             }
 
             <!-- Features -->
-            <div class="mb-4">
+            <div class="mb-3 sm:mb-4">
               <h3
                 class="text-sm font-semibold text-gray-900 dark:text-white mb-2"
               >
@@ -198,7 +205,7 @@ const categoryColors: Record<string, string> = {
             </div>
 
             <!-- Tags -->
-            <div class="mb-4">
+            <div class="mb-3 sm:mb-4">
               <h3
                 class="text-sm font-semibold text-gray-900 dark:text-white mb-2"
               >
@@ -217,9 +224,9 @@ const categoryColors: Record<string, string> = {
 
             <!-- Category and Status -->
             <div
-              class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700"
+              class="mt-auto pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-700"
             >
-              <div class="flex flex-wrap gap-2">
+              <div class="flex flex-wrap gap-1 sm:gap-2">
                 <span
                   class={`px-2 py-1 rounded-full text-xs font-semibold border ${categoryColors[project.category] || "bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600"}`}
                 >
