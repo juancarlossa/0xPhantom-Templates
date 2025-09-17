@@ -6,10 +6,11 @@ export interface Props {
 }
 
 const { title = "0xPhantom Templates" } = Astro.props;
+let isDarkMode;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class={`scroll-smooth ${isDarkMode ? "dark" : ""}`}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -81,5 +82,7 @@ const { title = "0xPhantom Templates" } = Astro.props;
 
 <script>
 	const isDarkMode = document.documentElement.classList.contains("dark");
-	console.log("Modo actual:", isDarkMode ? "dark" : "light");
+	localStorage.getItem("theme") === "dark"
+		? document.documentElement.classList.add("dark")
+		: document.documentElement.classList.remove("dark");
 </script>

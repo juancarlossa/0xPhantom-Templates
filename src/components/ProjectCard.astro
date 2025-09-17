@@ -3,12 +3,15 @@ export interface Props {
   project: {
     id: string;
     title: string;
+    author: string;
+    author_img: string;
     category: string;
     description: string;
     images: string[];
     tags: string[];
     status: string;
     features: string[];
+    plan: string;
   };
 }
 
@@ -68,6 +71,33 @@ const statusText: Record<string, string> = {
     </span>
   </div>
 
+  <!-- PRO Badge -->
+  <div class="absolute top-3 right-3 z-10">
+    <div
+      class={`${project.plan !== "free" ? "from-purple-500/30 to-blue-500/30" : "from-green-500/30 to-green-500/30"} flex items-center px-3 py-2 bg-gradient-to-r backdrop-blur-sm rounded-full border border-white/20 shadow-lg `}
+    >
+      <div class="ml-auto">
+        <div class="flex items-center">
+          {
+            project.plan !== "free" && (
+              <svg
+                class="w-4 h-4 text-yellow-300 mr-1"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            )
+          }
+          <span
+            class={`text-xs font-bold ${project.plan !== "free" ? "text-yellow-300" : "text-green-300"}`}
+            >{project.plan.toUpperCase()}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Content -->
   <div class="relative z-10 p-6 h-full flex flex-col justify-end text-white">
     <!-- Title -->
@@ -92,9 +122,22 @@ const statusText: Record<string, string> = {
       </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Author & Footer Section -->
     <div class="flex items-center justify-between">
-      <div class="flex items-center text-sm text-white/80">
+      <!-- Author Signature -->
+      <div class="flex backdrop-blur-sm py-2 pr-4 rounded-full">
+        <img
+          class="w-6 h-6 rounded-full mr-2"
+          src={project.author_img || "https://avatar.iran.liara.run/public/20"}
+          alt={project.author}
+        />
+        <span class="text-slate-300 font-semibold text-sm tracking-wide">
+          {project.author}
+        </span>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="flex items-center text-sm text-white/70">
         <svg
           class="w-4 h-4 mr-1"
           fill="none"
@@ -108,25 +151,7 @@ const statusText: Record<string, string> = {
             d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
           ></path>
         </svg>
-        {project.images.length} imágenes
-      </div>
-
-      <div
-        class="text-white hover:text-purple-300 font-semibold text-sm flex items-center transition-colors group"
-      >
-        Ver detalles
-        <svg
-          class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 5l7 7-7 7"></path>
-        </svg>
+        <span class="text-xs">{project.images.length} img</span>
       </div>
     </div>
   </div>
