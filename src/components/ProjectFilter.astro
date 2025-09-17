@@ -1,0 +1,112 @@
+---
+export interface Props {
+  categories: string[];
+}
+
+const { categories } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-3 mb-8 justify-center">
+  <button 
+    class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-200 bg-purple-600 text-white shadow-lg hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600 transform hover:scale-105"
+    data-filter="all"
+  >
+    <span class="flex items-center">
+      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14-4H5m14 8H5"></path>
+      </svg>
+      Todos los proyectos
+    </span>
+  </button>
+  
+  {categories.map((category) => (
+    <button 
+      class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-200 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500 transform hover:scale-105"
+      data-filter={category}
+    >
+      <span class="flex items-center">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {category === 'Casino' && (
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          )}
+          {category === 'Tipsters' && (
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          )}
+          {category === 'News' && (
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+          )}
+        </svg>
+        {category}
+      </span>
+    </button>
+  ))}
+</div>
+
+<script>
+  function initializeFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('[data-category]');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        
+        // Update active button styles
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-purple-600', 'text-white', 'shadow-lg', 'dark:bg-purple-700');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300', 'border', 'border-gray-200', 'dark:border-gray-600');
+        });
+        
+        button.classList.remove('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300', 'border', 'border-gray-200', 'dark:border-gray-600');
+        button.classList.add('bg-purple-600', 'dark:bg-purple-700', 'text-white', 'shadow-lg');
+
+        // Filter projects with animation
+        projectCards.forEach((card, index) => {
+          const cardCategory = card.getAttribute('data-category');
+          const htmlCard = card as HTMLElement;
+          
+          if (filter === 'all' || cardCategory === filter) {
+            // Show card with staggered animation
+            setTimeout(() => {
+              htmlCard.style.display = 'block';
+              htmlCard.classList.remove('hidden');
+              htmlCard.style.opacity = '0';
+              htmlCard.style.transform = 'translateY(20px)';
+              
+              requestAnimationFrame(() => {
+                htmlCard.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                htmlCard.style.opacity = '1';
+                htmlCard.style.transform = 'translateY(0)';
+              });
+            }, index * 50);
+          } else {
+            // Hide card
+            htmlCard.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+            htmlCard.style.opacity = '0';
+            htmlCard.style.transform = 'translateY(-10px)';
+            
+            setTimeout(() => {
+              htmlCard.style.display = 'none';
+              htmlCard.classList.add('hidden');
+            }, 200);
+          }
+        });
+
+        // Update project count
+        setTimeout(() => {
+          const visibleCards = document.querySelectorAll('[data-category]:not(.hidden)');
+          const countElement = document.getElementById('project-count');
+          if (countElement) {
+            countElement.textContent = visibleCards.length.toString();
+          }
+        }, 300);
+      });
+    });
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', initializeFilters);
+  
+  // Re-initialize on navigation (for SPA behavior)
+  document.addEventListener('astro:page-load', initializeFilters);
+</script>

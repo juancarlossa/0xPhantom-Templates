@@ -1,0 +1,372 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ProjectModal from "../components/ProjectModal.astro";
+import ProjectFilter from "../components/ProjectFilter.astro";
+import DarkModeToggle from "../components/DarkModeToggle.astro";
+import projectsData from "../data/projects.json";
+
+// Get unique categories
+const categories = [
+	...new Set(projectsData.map((project) => project.category)),
+];
+const completedProjects = projectsData.filter(
+	(p) => p.status === "completed",
+).length;
+const totalImages = projectsData.reduce(
+	(total, project) => total + project.images.length,
+	0,
+);
+---
+
+<Layout>
+	<!-- Dark Mode Toggle -->
+	<DarkModeToggle />
+
+	<main
+		class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+	>
+		<!-- Hero Section -->
+		<section
+			class="relative bg-white dark:bg-gray-800 shadow-sm overflow-hidden"
+		>
+			<div
+				class="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-blue-600/5"
+			>
+			</div>
+			<div class="relative mx-auto px-4 sm:px-6 lg:px-8 py-16">
+				<div class="text-center">
+					<div class="mb-6">
+						<span
+							class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-purple-100 text-purple-800 border border-purple-200"
+						>
+							<svg
+								class="w-4 h-4 mr-2"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z"
+								></path>
+							</svg>
+							0xPhantom Templates
+						</span>
+					</div>
+
+					<h1
+						class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+					>
+						Templates de
+						<span
+							class="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
+						>
+							Calidad Premium
+						</span>
+					</h1>
+
+					<p
+						class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed"
+					>
+						Descubre nuestra colección exclusiva de templates
+						profesionales para
+						<strong>Casino</strong>, <strong>Tipsters</strong> y <strong
+							>News</strong
+						>. Cada diseño está crafteado con las mejores prácticas
+						de UX/UI y tecnologías modernas.
+					</p>
+
+					<div class="flex flex-wrap justify-center gap-4 mb-12">
+						<div
+							class="flex items-center px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600"
+						>
+							<svg
+								class="w-5 h-5 text-green-500 mr-2"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M5 13l4 4L19 7"></path>
+							</svg>
+							<span
+								class="text-sm font-medium text-gray-700 dark:text-gray-300"
+								>Responsive Design</span
+							>
+						</div>
+						<div
+							class="flex items-center px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600"
+						>
+							<svg
+								class="w-5 h-5 text-blue-500 mr-2"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+							<span
+								class="text-sm font-medium text-gray-700 dark:text-gray-300"
+								>Performance Optimized</span
+							>
+						</div>
+						<div
+							class="flex items-center px-4 py-2 bg-white dark:bg-gray-700 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600"
+						>
+							<svg
+								class="w-5 h-5 text-purple-500 mr-2"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a4 4 0 004-4V5z"
+								></path>
+							</svg>
+							<span
+								class="text-sm font-medium text-gray-700 dark:text-gray-300"
+								>Modern UI/UX</span
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Projects Section -->
+		<section class="py-16">
+			<div class="mx-auto">
+				<!-- Section Header -->
+				<div class="text-center mb-12">
+					<h2
+						class="text-3xl font-bold text-gray-900 dark:text-white mb-4"
+					>
+						Explora Nuestros Templates
+					</h2>
+					<p
+						class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+					>
+						Filtra por categoría para encontrar el template perfecto
+						para tu proyecto
+					</p>
+				</div>
+
+				<!-- Filter Buttons -->
+				<ProjectFilter categories={categories} />
+
+				<!-- Projects Grid -->
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+				>
+					{
+						projectsData.map((project) => (
+							<div
+								data-category={project.category}
+								class="transform transition-all duration-300 flex"
+							>
+								<ProjectCard project={project} />
+							</div>
+						))
+					}
+				</div>
+
+				<!-- Empty State -->
+				<div id="empty-state" class="text-center py-16 hidden">
+					<div class="text-gray-400 dark:text-gray-500 mb-6">
+						<svg
+							class="w-20 h-20 mx-auto"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="1"
+								d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33"
+							></path>
+						</svg>
+					</div>
+					<h3
+						class="text-2xl font-semibold text-gray-900 dark:text-white mb-3"
+					>
+						No se encontraron proyectos
+					</h3>
+					<p class="text-gray-500 dark:text-gray-400 mb-6">
+						Intenta seleccionar otra categoría para ver más
+						templates.
+					</p>
+					<button
+						class="filter-btn px-6 py-3 rounded-full font-medium bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+						data-filter="all"
+					>
+						Ver todos los proyectos
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section
+			class="py-20 bg-gradient-to-r from-purple-600 to-blue-600 relative overflow-hidden"
+		>
+			<div class="absolute inset-0 bg-black/10"></div>
+			<div class="relative mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h2 class="text-4xl font-bold text-white mb-6">
+					¿Listo para empezar tu proyecto?
+				</h2>
+				<p class="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+					Contáctanos para obtener más información sobre nuestros
+					templates y servicios de desarrollo personalizado.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<button
+						class="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105"
+					>
+						<span class="flex items-center justify-center">
+							<svg
+								class="w-5 h-5 mr-2"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+								></path>
+							</svg>
+							Contactar Ahora
+						</span>
+					</button>
+					<button
+						class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-purple-600 transition-colors transform hover:scale-105"
+					>
+						<span class="flex items-center justify-center">
+							<svg
+								class="w-5 h-5 mr-2"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+								></path>
+							</svg>
+							Ver Demo
+						</span>
+					</button>
+				</div>
+			</div>
+		</section>
+		<!-- Stats Section -->
+		<section
+			class="py-12 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-y border-gray-200/50 dark:border-gray-700/50"
+		>
+			<div class="mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+					<div
+						class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow"
+					>
+						<div
+							class="text-3xl font-bold text-purple-600 mb-2"
+							id="project-count"
+						>
+							{projectsData.length}
+						</div>
+						<div
+							class="text-gray-600 dark:text-gray-300 font-medium"
+						>
+							Total Proyectos
+						</div>
+					</div>
+					<div
+						class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow"
+					>
+						<div class="text-3xl font-bold text-green-600 mb-2">
+							{completedProjects}
+						</div>
+						<div
+							class="text-gray-600 dark:text-gray-300 font-medium"
+						>
+							Completados
+						</div>
+					</div>
+					<div
+						class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow"
+					>
+						<div class="text-3xl font-bold text-blue-600 mb-2">
+							{categories.length}
+						</div>
+						<div
+							class="text-gray-600 dark:text-gray-300 font-medium"
+						>
+							Categorías
+						</div>
+					</div>
+					<div
+						class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow"
+					>
+						<div class="text-3xl font-bold text-orange-600 mb-2">
+							{totalImages}
+						</div>
+						<div
+							class="text-gray-600 dark:text-gray-300 font-medium"
+						>
+							Imágenes Total
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer
+			class="bg-white text-gray-800 dark:bg-gray-800 dark:text-white py-12"
+		>
+			<div class="mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center">
+					<div class="mb-6">
+						<h3 class="text-2xl font-bold mb-2">0xPhantom</h3>
+						<p class="text-gray-600 dark:text-gray-400">
+							Diseños profesionales para proyectos excepcionales
+						</p>
+					</div>
+					<div
+						class="border-t border-gray-800 dark:border-gray-700 pt-6"
+					>
+						<p class="text-gray-500 text-sm">
+							© 2025 0xPhantom Templates. Todos los derechos
+							reservados.
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Project Modals -->
+		{projectsData.map((project) => <ProjectModal project={project} />)}
+	</main>
+</Layout>

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "casino-t1",
+    "title": "Casino T1",
+    "category": "Casino",
+    "description": "Template moderno de casino con diseño elegante y elementos interactivos",
+    "images": [
+      "/images/casino-t1/image1.png",
+      "/images/casino-t1/image2.png",
+      "/images/casino-t1/image3.png",
+      "/images/casino-t1/image4.png",
+      "/images/casino-t1/image5.png",
+      "/images/casino-t1/image6.png"
+    ],
+    "tags": ["Casino", "Gaming", "Modern", "Interactive"],
+    "status": "completed",
+    "features": ["Responsive Design", "Interactive Elements", "Modern UI"]
+  },
+  {
+    "id": "casino-t2",
+    "title": "Casino T2",
+    "category": "Casino",
+    "description": "Template avanzado de casino con experiencia de usuario mejorada",
+    "images": [
+      "/images/casino-t2/image1.png",
+      "/images/casino-t2/image2.png",
+      "/images/casino-t2/image3.png",
+      "/images/casino-t2/image4.png",
+      "/images/casino-t2/image5.png"
+    ],
+    "tags": ["Casino", "Gaming", "Advanced", "UX"],
+    "status": "completed",
+    "features": ["Advanced UX", "Gaming Interface", "Performance Optimized"]
+  },
+  {
+    "id": "casino-t3",
+    "title": "Casino T3",
+    "category": "Casino",
+    "description": "Template premium de casino con diseño sofisticado",
+    "images": [
+      "/images/casino-t3/image1.png",
+      "/images/casino-t3/image2.png",
+      "/images/casino-t3/image3.png",
+      "/images/casino-t3/image4.png",
+      "/images/casino-t3/image5.png"
+    ],
+    "tags": ["Casino", "Gaming", "Premium", "Sophisticated"],
+    "status": "completed",
+    "features": ["Premium Design", "Sophisticated Layout", "High-end Graphics"]
+  },
+  {
+    "id": "casino-t5",
+    "title": "Casino T5 - Template clásica con hero",
+    "category": "Casino",
+    "description": "Template clásica de casino con sección hero y diseño tradicional",
+    "images": [
+      "/images/casino-t5/image1.png",
+      "/images/casino-t5/image2.png",
+      "/images/casino-t5/image3.png",
+      "/images/casino-t5/image4.png",
+      "/images/casino-t5/image5.png"
+    ],
+    "tags": ["Casino", "Gaming", "Classic", "Hero Section"],
+    "status": "completed",
+    "features": ["Hero Section", "Classic Design", "Traditional Layout"]
+  },
+  {
+    "id": "tipsters-t1",
+    "title": "Tipsters T1 - Solo Nav y Footer",
+    "category": "Tipsters",
+    "description": "Template minimalista de tipsters con navegación y footer, contenido desde API",
+    "images": [
+      "/images/tipsters-t1/image1.png"
+    ],
+    "tags": ["Tipsters", "API", "Minimal", "Navigation"],
+    "status": "completed",
+    "features": ["API Integration", "Minimal Design", "Dynamic Content"]
+  },
+  {
+    "id": "tipsters-t2",
+    "title": "Tipsters T2 - Solo Nav y Footer",
+    "category": "Tipsters",
+    "description": "Template alternativo de tipsters con navegación y footer, contenido desde API",
+    "images": [
+      "/images/tipsters-t2/image1.png"
+    ],
+    "tags": ["Tipsters", "API", "Alternative", "Navigation"],
+    "status": "completed",
+    "features": ["API Driven", "Alternative Layout", "Clean Interface"]
+  },
+  {
+    "id": "tipsters-t3",
+    "title": "Tipsters T3 - Template clásica con hero",
+    "category": "Tipsters",
+    "description": "Template clásica de tipsters con sección hero y diseño integral",
+    "images": [
+      "/images/tipsters-t3/image1.png",
+      "/images/tipsters-t3/image2.png",
+      "/images/tipsters-t3/image3.png",
+      "/images/tipsters-t3/image4.png"
+    ],
+    "tags": ["Tipsters", "Classic", "Hero Section", "Comprehensive"],
+    "status": "completed",
+    "features": ["Hero Section", "Comprehensive Layout", "Classic Design"]
+  },
+  {
+    "id": "news-t1",
+    "title": "News T1",
+    "category": "News",
+    "description": "Template moderno de noticias con diseño limpio y visualización de artículos",
+    "images": [
+      "/images/news-t1/image1.png",
+      "/images/news-t1/image2.png",
+      "/images/news-t1/image3.png"
+    ],
+    "tags": ["News", "Articles", "Clean", "Modern"],
+    "status": "completed",
+    "features": ["Article Display", "Clean Layout", "Modern Design"]
+  },
+  {
+    "id": "news-t2",
+    "title": "News T2 (Inacabada)",
+    "category": "News",
+    "description": "Template de noticias en desarrollo con características avanzadas",
+    "images": [
+      "/images/news-t2/image1.png"
+    ],
+    "tags": ["News", "In Development", "Advanced"],
+    "status": "in_progress",
+    "features": ["Advanced Features", "In Development", "Future Ready"]
+  }
+]
