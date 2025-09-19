@@ -1,355 +1,442 @@
-[
-  {
-    "id": "casino-t1",
-    "title": "Casino T1",
-    "author": "juank",
-    "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
-    "plan": "pro",
-    "category": "Casino",
-    "description": "Template moderno de casino con diseño elegante y elementos interactivos",
-    "images": [
-      "/images/casino-t1/image1.png",
-      "/images/casino-t1/image2.png",
-      "/images/casino-t1/image3.png",
-      "/images/casino-t1/image4.png",
-      "/images/casino-t1/image5.png",
-      "/images/casino-t1/image6.png"
-    ],
-    "tags": [
+{
+  "metadata": {
+    "version": "2.0",
+    "lastUpdated": "2025-09-18",
+    "totalProjects": 14,
+    "categories": [
       "Casino",
-      "Gaming",
-      "Modern",
-      "Interactive"
-    ],
-    "status": "completed",
-    "features": [
-      "Responsive Design",
-      "Interactive Elements",
-      "Modern UI"
-    ]
-  },
-  {
-    "id": "casino-t2",
-    "title": "Casino T2",
-    "author": "juank",
-    "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
-    "plan": "free",
-    "category": "Casino",
-    "description": "Template avanzado de casino con experiencia de usuario mejorada",
-    "images": [
-      "/images/casino-t2/image1.png",
-      "/images/casino-t2/image2.png",
-      "/images/casino-t2/image3.png",
-      "/images/casino-t2/image4.png",
-      "/images/casino-t2/image5.png"
-    ],
-    "tags": [
-      "Casino",
-      "Gaming",
-      "Advanced",
-      "UX"
-    ],
-    "status": "completed",
-    "features": [
-      "Advanced UX",
-      "Gaming Interface",
-      "Performance Optimized"
-    ]
-  },
-  {
-    "id": "casino-t3",
-    "title": "Casino T3",
-    "author": "juank",
-    "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
-    "plan": "pro",
-    "category": "Casino",
-    "description": "Template premium de casino con diseño sofisticado",
-    "images": [
-      "/images/casino-t3/image1.png",
-      "/images/casino-t3/image2.png",
-      "/images/casino-t3/image3.png",
-      "/images/casino-t3/image4.png",
-      "/images/casino-t3/image5.png"
-    ],
-    "tags": [
-      "Casino",
-      "Gaming",
-      "Premium",
-      "Sophisticated"
-    ],
-    "status": "completed",
-    "features": [
-      "Premium Design",
-      "Sophisticated Layout",
-      "High-end Graphics"
-    ]
-  },
-  {
-    "id": "casino-t5",
-    "title": "Casino T5 - Template clásica con hero",
-    "author": "juank",
-    "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
-    "plan": "pro",
-    "category": "Casino",
-    "description": "Template clásica de casino con sección hero y diseño tradicional",
-    "images": [
-      "/images/casino-t5/image1.png",
-      "/images/casino-t5/image2.png",
-      "/images/casino-t5/image3.png",
-      "/images/casino-t5/image4.png",
-      "/images/casino-t5/image5.png"
-    ],
-    "tags": [
-      "Casino",
-      "Gaming",
-      "Classic",
-      "Hero Section"
-    ],
-    "status": "completed",
-    "features": [
-      "Hero Section",
-      "Classic Design",
-      "Traditional Layout"
-    ]
-  },
-  {
-    "id": "casino-t6",
-    "title": "Casino T6",
-    "author": "alex",
-    "author_img": "https://avatar.iran.liara.run/public/20",
-    "plan": "pro",
-    "category": "Casino",
-    "description": "Template moderno de casino con uso de degradados y gran personalización",
-    "images": [
-      "/images/casino-t6/image1.png",
-      "/images/casino-t6/image2.png",
-      "/images/casino-t6/image3.png",
-      "/images/casino-t6/image4.png",
-      "/images/casino-t6/image5.png",
-      "/images/casino-t6/image6.png"
-    ],
-    "tags": [
-      "Casino",
-      "Gaming",
-      "Modern",
-      "Interactive",
-      "Color Gradient"
-    ],
-    "status": "completed",
-    "features": [
-      "Responsive Design",
-      "Interactive Elements",
-      "Modern UI"
-    ]
-  },
-  {
-    "id": "casino-t7",
-    "title": "Casino T7",
-    "author": "alex",
-    "author_img": "https://avatar.iran.liara.run/public/20",
-    "plan": "pro",
-    "category": "Casino",
-    "description": "Template moderna con toques oscuros y altos contrastes",
-    "images": [
-      "/images/casino-t7/image1.png",
-      "/images/casino-t7/image2.png",
-      "/images/casino-t7/image3.png",
-      "/images/casino-t7/image4.png",
-      "/images/casino-t7/image5.png",
-      "/images/casino-t7/image6.png"
-    ],
-    "tags": [
-      "Casino",
-      "Dark",
-      "Hero Section",
-      "Categories"
-    ],
-    "status": "completed",
-    "features": [
-      "Hero Section",
-      "Modern Design",
-      "Traditional Layout"
-    ]
-  },
-  {
-    "id": "casino-t8",
-    "title": "Casino T8",
-    "author": "alex",
-    "author_img": "https://avatar.iran.liara.run/public/20",
-    "plan": "pro",
-    "category": "Casino",
-    "description": "Template moderno de casino con colores claros y sin uso de hero",
-    "images": [
-      "/images/casino-t8/image1.png",
-      "/images/casino-t8/image2.png",
-      "/images/casino-t8/image3.png",
-      "/images/casino-t8/image4.png"
-    ],
-    "tags": [
-      "Casino",
-      "Gaming",
-      "Modern",
-      "Interactive"
-    ],
-    "status": "completed",
-    "features": [
-      "Responsive Design",
-      "Interactive Elements",
-      "Modern UI"
-    ]
-  },
-  {
-    "id": "casino-t9",
-    "title": "Casino T9",
-    "author": "alex",
-    "author_img": "https://avatar.iran.liara.run/public/20",
-    "plan": "pro",
-    "category": "Casino",
-    "description": "Template moderno de casino con colores oscuros combinado con altos contrastes y toques de neón",
-    "images": [
-      "/images/casino-t9/image1.png",
-      "/images/casino-t9/image2.png",
-      "/images/casino-t9/image3.png",
-      "/images/casino-t9/image4.png",
-      "/images/casino-t9/image5.png",
-      "/images/casino-t9/image6.png"
-    ],
-    "tags": [
-      "Casino",
-      "Gaming",
-      "Modern",
-      "Interactive",
-      "Color Gradient"
-    ],
-    "status": "completed",
-    "features": [
-      "Responsive Design",
-      "Interactive Elements",
-      "Modern UI"
-    ]
-  },
-  {
-    "id": "tipsters-t1",
-    "title": "Tipsters T1 - Solo Nav y Footer",
-    "author": "juank",
-    "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
-    "plan": "pro",
-    "category": "Tipsters",
-    "description": "Template minimalista de tipsters con navegación y footer, contenido desde API",
-    "images": [
-      "/images/tipsters-t1/image1.png"
-    ],
-    "tags": [
       "Tipsters",
-      "API",
-      "Minimal",
-      "Navigation"
+      "News"
     ],
-    "status": "completed",
-    "features": [
-      "API Integration",
-      "Minimal Design",
-      "Dynamic Content"
-    ]
+    "categoryCounts": {
+      "casino": 9,
+      "tipsters": 3,
+      "news": 2
+    }
   },
-  {
-    "id": "tipsters-t2",
-    "title": "Tipsters T2 - Solo Nav y Footer",
-    "author": "juank",
-    "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
-    "plan": "free",
-    "category": "Tipsters",
-    "description": "Template alternativo de tipsters con navegación y footer, contenido desde API",
-    "images": [
-      "/images/tipsters-t2/image1.png"
-    ],
-    "tags": [
-      "Tipsters",
-      "API",
-      "Alternative",
-      "Navigation"
-    ],
-    "status": "completed",
-    "features": [
-      "API Driven",
-      "Alternative Layout",
-      "Clean Interface"
-    ]
-  },
-  {
-    "id": "tipsters-t3",
-    "title": "Tipsters T3 - Template clásica con hero",
-    "author": "juank",
-    "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
-    "plan": "free",
-    "category": "Tipsters",
-    "description": "Template clásica de tipsters con sección hero y diseño integral",
-    "images": [
-      "/images/tipsters-t3/image1.png",
-      "/images/tipsters-t3/image2.png",
-      "/images/tipsters-t3/image3.png",
-      "/images/tipsters-t3/image4.png"
-    ],
-    "tags": [
-      "Tipsters",
-      "Classic",
-      "Hero Section",
-      "Comprehensive"
-    ],
-    "status": "completed",
-    "features": [
-      "Hero Section",
-      "Comprehensive Layout",
-      "Classic Design"
-    ]
-  },
-  {
-    "id": "news-t1",
-    "title": "News T1",
-    "author": "juank",
-    "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
-    "plan": "pro",
-    "category": "News",
-    "description": "Template moderno de noticias con diseño limpio y visualización de artículos",
-    "images": [
-      "/images/news-t1/image1.png",
-      "/images/news-t1/image2.png",
-      "/images/news-t1/image3.png"
-    ],
-    "tags": [
-      "News",
-      "Articles",
-      "Clean",
-      "Modern"
-    ],
-    "status": "completed",
-    "features": [
-      "Article Display",
-      "Clean Layout",
-      "Modern Design"
-    ]
-  },
-  {
-    "id": "news-t2",
-    "title": "News T2 (Inacabada)",
-    "author": "juank",
-    "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
-    "plan": "free",
-    "category": "News",
-    "description": "Template de noticias en desarrollo con características avanzadas",
-    "images": [
-      "/images/news-t2/image1.png"
-    ],
-    "tags": [
-      "News",
-      "In Development",
-      "Advanced"
-    ],
-    "status": "in_progress",
-    "features": [
-      "Advanced Features",
-      "In Development",
-      "Future Ready"
-    ]
+  "categories": {
+    "casino": {
+      "name": "Casino",
+      "description": "Templates para sitios de casino y gaming",
+      "count": 9,
+      "projects": [
+        {
+          "id": 1,
+          "title": "Casino T1",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t1/",
+          "author": "juank",
+          "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
+          "plan": "pro",
+          "category": "Casino",
+          "description": "Template moderno de casino con diseño elegante y elementos interactivos",
+          "images": [
+            "/images/casino-t1/image1.png",
+            "/images/casino-t1/image2.png",
+            "/images/casino-t1/image3.png",
+            "/images/casino-t1/image4.png",
+            "/images/casino-t1/image5.png",
+            "/images/casino-t1/image6.png"
+          ],
+          "tags": [
+            "Casino",
+            "Gaming",
+            "Modern",
+            "Interactive"
+          ],
+          "status": "completed",
+          "features": [
+            "Responsive Design",
+            "Interactive Elements",
+            "Modern UI"
+          ],
+          "templateId": "casino-t1"
+        },
+        {
+          "id": 2,
+          "title": "Casino T2",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t2/",
+          "author": "juank",
+          "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
+          "plan": "free",
+          "category": "Casino",
+          "description": "Template avanzado de casino con experiencia de usuario mejorada",
+          "images": [
+            "/images/casino-t2/image1.png",
+            "/images/casino-t2/image2.png",
+            "/images/casino-t2/image3.png",
+            "/images/casino-t2/image4.png",
+            "/images/casino-t2/image5.png"
+          ],
+          "tags": [
+            "Casino",
+            "Gaming",
+            "Advanced",
+            "UX"
+          ],
+          "status": "completed",
+          "features": [
+            "Advanced UX",
+            "Gaming Interface",
+            "Performance Optimized"
+          ],
+          "templateId": "casino-t2"
+        },
+        {
+          "id": 3,
+          "title": "Casino T3",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t3/",
+          "author": "juank",
+          "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
+          "plan": "pro",
+          "category": "Casino",
+          "description": "Template premium de casino con diseño sofisticado",
+          "images": [
+            "/images/casino-t3/image1.png",
+            "/images/casino-t3/image2.png",
+            "/images/casino-t3/image3.png",
+            "/images/casino-t3/image4.png",
+            "/images/casino-t3/image5.png"
+          ],
+          "tags": [
+            "Casino",
+            "Gaming",
+            "Premium",
+            "Sophisticated"
+          ],
+          "status": "completed",
+          "features": [
+            "Premium Design",
+            "Sophisticated Layout",
+            "High-end Graphics"
+          ],
+          "templateId": "casino-t3"
+        },
+        {
+          "id": 5,
+          "title": "Casino T5 - Template clásica con hero",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t5/",
+          "author": "juank",
+          "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
+          "plan": "pro",
+          "category": "Casino",
+          "description": "Template clásica de casino con sección hero y diseño tradicional",
+          "images": [
+            "/images/casino-t5/image1.png",
+            "/images/casino-t5/image2.png",
+            "/images/casino-t5/image3.png",
+            "/images/casino-t5/image4.png",
+            "/images/casino-t5/image5.png"
+          ],
+          "tags": [
+            "Casino",
+            "Gaming",
+            "Classic",
+            "Hero Section"
+          ],
+          "status": "completed",
+          "features": [
+            "Hero Section",
+            "Classic Design",
+            "Traditional Layout"
+          ],
+          "templateId": "casino-t5"
+        },
+        {
+          "id": 6,
+          "title": "Casino T6",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t6/",
+          "author": "alex",
+          "author_img": "https://avatar.iran.liara.run/public/20",
+          "plan": "pro",
+          "category": "Casino",
+          "description": "Template moderno de casino con uso de degradados y gran personalización",
+          "images": [
+            "/images/casino-t6/image1.png",
+            "/images/casino-t6/image2.png",
+            "/images/casino-t6/image3.png",
+            "/images/casino-t6/image4.png",
+            "/images/casino-t6/image5.png",
+            "/images/casino-t6/image6.png"
+          ],
+          "tags": [
+            "Casino",
+            "Gaming",
+            "Modern",
+            "Interactive",
+            "Color Gradient"
+          ],
+          "status": "completed",
+          "features": [
+            "Responsive Design",
+            "Interactive Elements",
+            "Modern UI"
+          ],
+          "templateId": "casino-t6"
+        },
+        {
+          "id": 7,
+          "title": "Casino T7",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t7/",
+          "author": "alex",
+          "author_img": "https://avatar.iran.liara.run/public/20",
+          "plan": "pro",
+          "category": "Casino",
+          "description": "Template moderna con toques oscuros y altos contrastes",
+          "images": [
+            "/images/casino-t7/image1.png",
+            "/images/casino-t7/image2.png",
+            "/images/casino-t7/image3.png",
+            "/images/casino-t7/image4.png",
+            "/images/casino-t7/image5.png",
+            "/images/casino-t7/image6.png"
+          ],
+          "tags": [
+            "Casino",
+            "Dark",
+            "Hero Section",
+            "Categories"
+          ],
+          "status": "completed",
+          "features": [
+            "Hero Section",
+            "Modern Design",
+            "Traditional Layout"
+          ],
+          "templateId": "casino-t7"
+        },
+        {
+          "id": 8,
+          "title": "Casino T8",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t8/",
+          "author": "alex",
+          "author_img": "https://avatar.iran.liara.run/public/20",
+          "plan": "pro",
+          "category": "Casino",
+          "description": "Template moderno de casino con colores claros y sin uso de hero",
+          "images": [
+            "/images/casino-t8/image1.png",
+            "/images/casino-t8/image2.png",
+            "/images/casino-t8/image3.png",
+            "/images/casino-t8/image4.png"
+          ],
+          "tags": [
+            "Casino",
+            "Gaming",
+            "Modern",
+            "Interactive"
+          ],
+          "status": "completed",
+          "features": [
+            "Responsive Design",
+            "Interactive Elements",
+            "Modern UI"
+          ],
+          "templateId": "casino-t8"
+        },
+        {
+          "id": 9,
+          "title": "Casino T9",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t9/",
+          "author": "alex",
+          "author_img": "https://avatar.iran.liara.run/public/20",
+          "plan": "pro",
+          "category": "Casino",
+          "description": "Template moderno de casino con colores oscuros combinado con altos contrastes y toques de neón",
+          "images": [
+            "/images/casino-t9/image1.png",
+            "/images/casino-t9/image2.png",
+            "/images/casino-t9/image3.png",
+            "/images/casino-t9/image4.png",
+            "/images/casino-t9/image5.png",
+            "/images/casino-t9/image6.png"
+          ],
+          "tags": [
+            "Casino",
+            "Gaming",
+            "Modern",
+            "Interactive",
+            "Color Gradient"
+          ],
+          "status": "completed",
+          "features": [
+            "Responsive Design",
+            "Interactive Elements",
+            "Modern UI"
+          ],
+          "templateId": "casino-t9"
+        },
+        {
+          "id": 10,
+          "templateId": "casino-t10",
+          "title": "Casino t10",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t10/",
+          "author": "Developer",
+          "author_img": "/images/authors/default.jpg",
+          "plan": "free",
+          "category": "Casino",
+          "description": "New casino template based on front-cms-casino/casino-t1",
+          "images": [],
+          "tags": [
+            "casino",
+            "template",
+            "new"
+          ],
+          "status": "completed",
+          "features": [
+            "Responsive Design",
+            "Modern UI",
+            "Template Generated"
+          ]
+        }
+      ]
+    },
+    "tipsters": {
+      "name": "Tipsters",
+      "description": "Templates para sitios de tipsters y pronósticos deportivos",
+      "count": 3,
+      "projects": [
+        {
+          "id": 1,
+          "title": "Tipsters T1 - Solo Nav y Footer",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-tipsters/tipsters-t1/",
+          "author": "juank",
+          "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
+          "plan": "pro",
+          "category": "Tipsters",
+          "description": "Template minimalista de tipsters con navegación y footer, contenido desde API",
+          "images": [
+            "/images/tipsters-t1/image1.png"
+          ],
+          "tags": [
+            "Tipsters",
+            "API",
+            "Minimal",
+            "Navigation"
+          ],
+          "status": "completed",
+          "features": [
+            "API Integration",
+            "Minimal Design",
+            "Dynamic Content"
+          ],
+          "templateId": "tipsters-t1"
+        },
+        {
+          "id": 2,
+          "title": "Tipsters T2 - Solo Nav y Footer",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-tipsters/tipsters-t2/",
+          "author": "juank",
+          "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
+          "plan": "free",
+          "category": "Tipsters",
+          "description": "Template alternativo de tipsters con navegación y footer, contenido desde API",
+          "images": [
+            "/images/tipsters-t2/image1.png"
+          ],
+          "tags": [
+            "Tipsters",
+            "API",
+            "Alternative",
+            "Navigation"
+          ],
+          "status": "completed",
+          "features": [
+            "API Driven",
+            "Alternative Layout",
+            "Clean Interface"
+          ],
+          "templateId": "tipsters-t2"
+        },
+        {
+          "id": 3,
+          "title": "Tipsters T3 - Template clásica con hero",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-tipsters/tipsters-t3/",
+          "author": "juank",
+          "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
+          "plan": "free",
+          "category": "Tipsters",
+          "description": "Template clásica de tipsters con sección hero y diseño integral",
+          "images": [
+            "/images/tipsters-t3/image1.png",
+            "/images/tipsters-t3/image2.png",
+            "/images/tipsters-t3/image3.png",
+            "/images/tipsters-t3/image4.png"
+          ],
+          "tags": [
+            "Tipsters",
+            "Classic",
+            "Hero Section",
+            "Comprehensive"
+          ],
+          "status": "completed",
+          "features": [
+            "Hero Section",
+            "Comprehensive Layout",
+            "Classic Design"
+          ],
+          "templateId": "tipsters-t3"
+        }
+      ]
+    },
+    "news": {
+      "name": "News",
+      "description": "Templates para sitios de noticias y blogs",
+      "count": 2,
+      "projects": [
+        {
+          "id": 1,
+          "title": "News T1",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-news/news-t1/",
+          "author": "juank",
+          "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
+          "plan": "pro",
+          "category": "News",
+          "description": "Template moderno de noticias con diseño limpio y visualización de artículos",
+          "images": [
+            "/images/news-t1/image1.png",
+            "/images/news-t1/image2.png",
+            "/images/news-t1/image3.png"
+          ],
+          "tags": [
+            "News",
+            "Articles",
+            "Clean",
+            "Modern"
+          ],
+          "status": "completed",
+          "features": [
+            "Article Display",
+            "Clean Layout",
+            "Modern Design"
+          ],
+          "templateId": "news-t1"
+        },
+        {
+          "id": 2,
+          "title": "News T2 (Inacabada)",
+          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-news/news-t2/",
+          "author": "juank",
+          "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
+          "plan": "free",
+          "category": "News",
+          "description": "Template de noticias en desarrollo con características avanzadas",
+          "images": [
+            "/images/news-t2/image1.png"
+          ],
+          "tags": [
+            "News",
+            "In Development",
+            "Advanced"
+          ],
+          "status": "in_progress",
+          "features": [
+            "Advanced Features",
+            "In Development",
+            "Future Ready"
+          ],
+          "templateId": "news-t2"
+        }
+      ]
+    }
   }
-]
+}

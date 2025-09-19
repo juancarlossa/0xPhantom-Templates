@@ -6,14 +6,23 @@ import ProjectFilter from "../components/ProjectFilter.astro";
 import DarkModeToggle from "../components/DarkModeToggle.astro";
 import projectsData from "../data/projects.json";
 
+// Get all projects from all categories and normalize them
+const allProjects = [
+	...projectsData.categories.casino.projects,
+	...projectsData.categories.tipsters.projects,
+	...projectsData.categories.news.projects,
+].map(project => ({
+	...project,
+	id: project.id.toString() // Convert id to string for component compatibility
+}));
+
 // Get unique categories
-const categories = [
-	...new Set(projectsData.map((project) => project.category)),
-];
-const completedProjects = projectsData.filter(
+const categories = Object.keys(projectsData.categories);
+
+const completedProjects = allProjects.filter(
 	(p) => p.status === "completed",
 ).length;
-const totalImages = projectsData.reduce(
+const totalImages = allProjects.reduce(
 	(total, project) => total + project.images.length,
 	0,
 );
@@ -172,9 +181,9 @@ const totalImages = projectsData.reduce(
 					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
 				>
 					{
-						projectsData.map((project) => (
+						allProjects.map((project) => (
 							<div
-								data-category={project.category}
+								data-category={project.category.toLowerCase()}
 								class="transform transition-all duration-300 flex"
 							>
 								<ProjectCard project={project} />
@@ -294,7 +303,7 @@ const totalImages = projectsData.reduce(
 							class="text-3xl font-bold text-purple-600 mb-2"
 							id="project-count"
 						>
-							{projectsData.length}
+							{allProjects.length}
 						</div>
 						<div
 							class="text-gray-600 dark:text-gray-300 font-medium"
@@ -367,6 +376,6 @@ const totalImages = projectsData.reduce(
 		</footer>
 
 		<!-- Project Modals -->
-		{projectsData.map((project) => <ProjectModal project={project} />)}
+		{allProjects.map((project) => <ProjectModal project={project} />)}
 	</main>
 </Layout>
