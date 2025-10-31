@@ -11,9 +11,9 @@ const allProjects = [
 	...projectsData.categories.casino.projects,
 	...projectsData.categories.tipsters.projects,
 	...projectsData.categories.news.projects,
-].map(project => ({
+].map((project) => ({
 	...project,
-	id: project.id.toString() // Convert id to string for component compatibility
+	id: project.id.toString(), // Convert id to string for component compatibility
 }));
 
 // Get unique categories
@@ -177,54 +177,203 @@ const totalImages = allProjects.reduce(
 				<ProjectFilter categories={categories} />
 
 				<!-- Column Control -->
-				<div class="flex justify-center items-center gap-3 mb-8">
-					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-						Columnas:
-					</span>
-					<div class="flex gap-2 bg-white dark:bg-gray-800 p-1 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-						<button
-							class="column-btn px-3 py-1.5 rounded text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
-							data-columns="1"
+				<div class="flex justify-center items-center gap-4 mb-8 px-4">
+					<div class="flex items-center gap-2">
+						<svg
+							class="w-5 h-5 text-gray-600 dark:text-gray-400"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
 						>
-							1
-						</button>
-						<button
-							class="column-btn px-3 py-1.5 rounded text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
-							data-columns="2"
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+						<span
+							class="text-sm font-medium text-gray-700 dark:text-gray-300"
 						>
-							2
-						</button>
-						<button
-							class="column-btn px-3 py-1.5 rounded text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300"
-							data-columns="3"
+							Columnas
+						</span>
+					</div>
+					<div
+						class="flex items-center gap-3 bg-white dark:bg-gray-800 px-4 py-3 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700"
+					>
+						<span
+							class="text-xs font-semibold text-gray-500 dark:text-gray-400 w-4"
+							>1</span
 						>
-							3
-						</button>
-						<button
-							class="column-btn px-3 py-1.5 rounded text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
-							data-columns="4"
+						<div class="relative w-48">
+							<input
+								type="range"
+								id="column-slider"
+								min="1"
+								max="5"
+								value="3"
+								class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
+							/>
+							<div class="flex justify-between mt-2 px-0.5">
+								<div
+									class="w-0.5 h-1.5 bg-gray-300 dark:bg-gray-600 rounded"
+								>
+								</div>
+								<div
+									class="w-0.5 h-1.5 bg-gray-300 dark:bg-gray-600 rounded"
+								>
+								</div>
+								<div
+									class="w-0.5 h-1.5 bg-gray-300 dark:bg-gray-600 rounded"
+								>
+								</div>
+								<div
+									class="w-0.5 h-1.5 bg-gray-300 dark:bg-gray-600 rounded"
+								>
+								</div>
+								<div
+									class="w-0.5 h-1.5 bg-gray-300 dark:bg-gray-600 rounded"
+								>
+								</div>
+							</div>
+						</div>
+						<span
+							class="text-xs font-semibold text-gray-500 dark:text-gray-400 w-4"
+							>5</span
 						>
-							4
-						</button>
-						<button
-							class="column-btn px-3 py-1.5 rounded text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
-							data-columns="5"
+						<div
+							class="ml-2 flex items-center justify-center w-8 h-8 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg font-bold text-sm"
 						>
-							5
-						</button>
+							<span id="column-value">3</span>
+						</div>
 					</div>
 				</div>
+
+				<style>
+					/* Grid transition styles */
+					#projects-grid {
+						transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+					}
+
+					.project-item {
+						transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+						opacity: 1;
+					}
+
+					/* Smooth layout shift animation */
+					@keyframes fadeInScale {
+						from {
+							opacity: 0.8;
+							transform: scale(0.98);
+						}
+						to {
+							opacity: 1;
+							transform: scale(1);
+						}
+					}
+
+					.project-item {
+						animation: fadeInScale 0.3s ease-out;
+					}
+
+					/* Slider styles */
+					.slider {
+						-webkit-appearance: none;
+						appearance: none;
+						background: transparent;
+						outline: none;
+					}
+
+					.slider::-webkit-slider-thumb {
+						-webkit-appearance: none;
+						appearance: none;
+						width: 20px;
+						height: 20px;
+						border-radius: 50%;
+						background: linear-gradient(
+							135deg,
+							#9333ea 0%,
+							#7c3aed 100%
+						);
+						cursor: pointer;
+						box-shadow: 0 2px 8px rgba(147, 51, 234, 0.4);
+						transition: all 0.2s ease;
+						margin-top: -6px; /* Centers the thumb on the track */
+					}
+
+					.slider::-webkit-slider-thumb:hover {
+						transform: scale(1.15);
+						box-shadow: 0 4px 12px rgba(147, 51, 234, 0.6);
+					}
+
+					.slider::-moz-range-thumb {
+						width: 20px;
+						height: 20px;
+						border-radius: 50%;
+						background: linear-gradient(
+							135deg,
+							#9333ea 0%,
+							#7c3aed 100%
+						);
+						cursor: pointer;
+						border: none;
+						box-shadow: 0 2px 8px rgba(147, 51, 234, 0.4);
+						transition: all 0.2s ease;
+					}
+
+					.slider::-moz-range-thumb:hover {
+						transform: scale(1.15);
+						box-shadow: 0 4px 12px rgba(147, 51, 234, 0.6);
+					}
+
+					.slider::-webkit-slider-runnable-track {
+						background: linear-gradient(
+							to right,
+							#9333ea 0%,
+							#9333ea var(--slider-progress, 40%),
+							#e5e7eb var(--slider-progress, 40%),
+							#e5e7eb 100%
+						);
+						height: 8px;
+						border-radius: 4px;
+					}
+
+					.dark .slider::-webkit-slider-runnable-track {
+						background: linear-gradient(
+							to right,
+							#9333ea 0%,
+							#9333ea var(--slider-progress, 40%),
+							#374151 var(--slider-progress, 40%),
+							#374151 100%
+						);
+					}
+
+					.slider::-moz-range-track {
+						background: #e5e7eb;
+						height: 8px;
+						border-radius: 4px;
+					}
+
+					.dark .slider::-moz-range-track {
+						background: #374151;
+					}
+
+					.slider::-moz-range-progress {
+						background: #9333ea;
+						height: 8px;
+						border-radius: 4px;
+					}
+				</style>
 
 				<!-- Projects Grid -->
 				<div
 					id="projects-grid"
-					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 transition-all duration-500 ease-in-out"
 				>
 					{
 						allProjects.map((project) => (
 							<div
 								data-category={project.category.toLowerCase()}
-								class="transform transition-all duration-300 flex"
+								class="project-item transform transition-all duration-500 ease-in-out flex"
 							>
 								<ProjectCard project={project} />
 							</div>
@@ -421,65 +570,84 @@ const totalImages = allProjects.reduce(
 
 	<script>
 		function initializeColumnControl() {
-			const columnButtons = document.querySelectorAll('.column-btn');
-			const projectsGrid = document.getElementById('projects-grid');
-			
+			const columnSlider = document.getElementById(
+				"column-slider",
+			) as HTMLInputElement;
+			const columnValue = document.getElementById("column-value");
+			const projectsGrid = document.getElementById("projects-grid");
+
 			// Column class mappings
 			const columnClasses = {
-				'1': 'grid-cols-1',
-				'2': 'grid-cols-1 md:grid-cols-2',
-				'3': 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-				'4': 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4',
-				'5': 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'
+				"1": "grid-cols-1",
+				"2": "grid-cols-1 md:grid-cols-2",
+				"3": "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+				"4": "grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
+				"5": "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5",
 			};
 
-			columnButtons.forEach(button => {
-				button.addEventListener('click', () => {
-					const columns = button.getAttribute('data-columns');
-					if (!columns) return;
-					
-					// Remove active state from all buttons
-					columnButtons.forEach(btn => {
-						btn.classList.remove('bg-purple-100', 'dark:bg-purple-900/30', 'text-purple-700', 'dark:text-purple-300');
-						btn.classList.add('text-gray-700', 'dark:text-gray-300');
-					});
-					
-					// Add active state to clicked button
-					button.classList.add('bg-purple-100', 'dark:bg-purple-900/30', 'text-purple-700', 'dark:text-purple-300');
-					button.classList.remove('text-gray-700', 'dark:text-gray-300');
-					
-					// Remove all column classes
-					if (projectsGrid) {
-						Object.values(columnClasses).forEach((classString: string) => {
-							classString.split(' ').forEach((cls: string) => {
+			function updateSliderProgress(value: number) {
+				const percentage = ((value - 1) / 4) * 100;
+				if (columnSlider) {
+					columnSlider.style.setProperty(
+						"--slider-progress",
+						`${percentage}%`,
+					);
+				}
+			}
+
+			function updateColumns(columns: string) {
+				// Update display value
+				if (columnValue) {
+					columnValue.textContent = columns;
+				}
+
+				// Update slider progress
+				updateSliderProgress(parseInt(columns));
+
+				// Remove all column classes
+				if (projectsGrid) {
+					Object.values(columnClasses).forEach(
+						(classString: string) => {
+							classString.split(" ").forEach((cls: string) => {
 								projectsGrid.classList.remove(cls);
 							});
-						});
-						
-						// Add new column classes
-						const newClasses = columnClasses[columns as keyof typeof columnClasses].split(' ');
-						newClasses.forEach((cls: string) => {
-							projectsGrid.classList.add(cls);
-						});
-						
-						// Save preference to localStorage
-						localStorage.setItem('gridColumns', columns);
-					}
-				});
-			});
-			
-			// Load saved preference
-			const savedColumns = localStorage.getItem('gridColumns') || '3';
-			const savedButton = document.querySelector(`[data-columns="${savedColumns}"]`) as HTMLButtonElement;
-			if (savedButton) {
-				savedButton.click();
+						},
+					);
+
+					// Add new column classes
+					const newClasses =
+						columnClasses[
+							columns as keyof typeof columnClasses
+						].split(" ");
+					newClasses.forEach((cls: string) => {
+						projectsGrid.classList.add(cls);
+					});
+
+					// Save preference to localStorage
+					localStorage.setItem("gridColumns", columns);
+				}
 			}
+
+			// Slider event listener
+			if (columnSlider) {
+				columnSlider.addEventListener("input", (e) => {
+					const target = e.target as HTMLInputElement;
+					updateColumns(target.value);
+				});
+			}
+
+			// Load saved preference
+			const savedColumns = localStorage.getItem("gridColumns") || "3";
+			if (columnSlider) {
+				columnSlider.value = savedColumns;
+			}
+			updateColumns(savedColumns);
 		}
 
 		// Initialize on page load
-		document.addEventListener('DOMContentLoaded', initializeColumnControl);
-		
+		document.addEventListener("DOMContentLoaded", initializeColumnControl);
+
 		// Re-initialize on navigation (for SPA behavior)
-		document.addEventListener('astro:page-load', initializeColumnControl);
+		document.addEventListener("astro:page-load", initializeColumnControl);
 	</script>
 </Layout>
