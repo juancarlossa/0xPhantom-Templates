@@ -1,15 +1,15 @@
 {
   "metadata": {
     "version": "2.0",
-    "lastUpdated": "2025-09-18",
-    "totalProjects": 14,
+    "lastUpdated": "2025-10-31",
+    "totalProjects": 20,
     "categories": [
       "Casino",
       "Tipsters",
       "News"
     ],
     "categoryCounts": {
-      "casino": 9,
+      "casino": 15,
       "tipsters": 3,
       "news": 2
     }
@@ -18,12 +18,14 @@
     "casino": {
       "name": "Casino",
       "description": "Templates para sitios de casino y gaming",
-      "count": 9,
+      "count": 15,
       "projects": [
         {
+          "deploy": true,
           "id": 1,
           "title": "Casino T1",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t1/",
+          "slug": "front-cms-casino/casino-t1/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t1/",
           "author": "juank",
           "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
           "plan": "pro",
@@ -52,9 +54,11 @@
           "templateId": "casino-t1"
         },
         {
+          "deploy": false,
           "id": 2,
           "title": "Casino T2",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t2/",
+          "slug": "front-cms-casino/casino-t2/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t2/",
           "author": "juank",
           "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
           "plan": "free",
@@ -82,9 +86,11 @@
           "templateId": "casino-t2"
         },
         {
+          "deploy": false,
           "id": 3,
           "title": "Casino T3",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t3/",
+          "slug": "front-cms-casino/casino-t3/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t3/",
           "author": "juank",
           "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
           "plan": "pro",
@@ -112,9 +118,11 @@
           "templateId": "casino-t3"
         },
         {
+          "deploy": false,
           "id": 5,
           "title": "Casino T5 - Template clásica con hero",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t5/",
+          "slug": "front-cms-casino/casino-t5/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t5/",
           "author": "juank",
           "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
           "plan": "pro",
@@ -142,9 +150,11 @@
           "templateId": "casino-t5"
         },
         {
+          "deploy": false,
           "id": 6,
           "title": "Casino T6",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t6/",
+          "slug": "front-cms-casino/casino-t6/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t6/",
           "author": "alex",
           "author_img": "https://avatar.iran.liara.run/public/20",
           "plan": "pro",
@@ -174,9 +184,11 @@
           "templateId": "casino-t6"
         },
         {
+          "deploy": false,
           "id": 7,
           "title": "Casino T7",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t7/",
+          "slug": "front-cms-casino/casino-t7/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t7/",
           "author": "alex",
           "author_img": "https://avatar.iran.liara.run/public/20",
           "plan": "pro",
@@ -205,9 +217,11 @@
           "templateId": "casino-t7"
         },
         {
+          "deploy": false,
           "id": 8,
           "title": "Casino T8",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t8/",
+          "slug": "front-cms-casino/casino-t8/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t8/",
           "author": "alex",
           "author_img": "https://avatar.iran.liara.run/public/20",
           "plan": "pro",
@@ -234,9 +248,11 @@
           "templateId": "casino-t8"
         },
         {
+          "deploy": false,
           "id": 9,
           "title": "Casino T9",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t9/",
+          "slug": "front-cms-casino/casino-t9/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t9/",
           "author": "alex",
           "author_img": "https://avatar.iran.liara.run/public/20",
           "plan": "pro",
@@ -269,13 +285,170 @@
           "id": 10,
           "templateId": "casino-t10",
           "title": "Casino t10",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-casino/casino-t10/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t10/",
           "author": "Developer",
           "author_img": "/images/authors/default.jpg",
           "plan": "free",
           "category": "Casino",
           "description": "New casino template based on front-cms-casino/casino-t1",
-          "images": [],
+          "images": [
+            "/images/casino-t10/image1.png",
+            "/images/casino-t10/image2.png",
+            "/images/casino-t10/image3.png",
+            "/images/casino-t10/image4.png",
+            "/images/casino-t10/image5.png",
+            "/images/casino-t10/image6.png"
+          ],
+          "tags": [
+            "casino",
+            "template",
+            "new"
+          ],
+          "status": "completed",
+          "features": [
+            "Responsive Design",
+            "Modern UI",
+            "Template Generated"
+          ]
+        },
+        {
+          "id": 12,
+          "templateId": "casino-t12",
+          "title": "Casino t12",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t12/",
+          "author": "Developer",
+          "author_img": "/images/authors/default.jpg",
+          "plan": "free",
+          "category": "Casino",
+          "description": "New casino template based on front-cms-casino/casino-t1",
+          "images": [
+            "/images/casino-t12/image1.png",
+            "/images/casino-t12/image2.png",
+            "/images/casino-t12/image3.png",
+            "/images/casino-t12/image4.png",
+            "/images/casino-t12/image5.png",
+            "/images/casino-t12/image6.png"
+          ],
+          "tags": [
+            "casino",
+            "template",
+            "new"
+          ],
+          "status": "completed",
+          "features": [
+            "Responsive Design",
+            "Modern UI",
+            "Template Generated"
+          ]
+        },
+        {
+          "id": 13,
+          "templateId": "casino-t13",
+          "title": "Casino t13",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t13/",
+          "author": "Developer",
+          "author_img": "/images/authors/default.jpg",
+          "plan": "free",
+          "category": "Casino",
+          "description": "New casino template based on front-cms-casino/casino-t1",
+          "images": [
+            "/images/casino-t13/image1.png",
+            "/images/casino-t13/image2.png",
+            "/images/casino-t13/image3.png",
+            "/images/casino-t13/image4.png",
+            "/images/casino-t13/image5.png",
+            "/images/casino-t13/image6.png"
+          ],
+          "tags": [
+            "casino",
+            "template",
+            "new"
+          ],
+          "status": "completed",
+          "features": [
+            "Responsive Design",
+            "Modern UI",
+            "Template Generated"
+          ]
+        },
+        {
+          "id": 14,
+          "templateId": "casino-t14",
+          "title": "Casino t14",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t14/",
+          "author": "Developer",
+          "author_img": "/images/authors/default.jpg",
+          "plan": "free",
+          "category": "Casino",
+          "description": "New casino template based on front-cms-casino/casino-t1",
+          "images": [
+            "/images/casino-t14/image1.png",
+            "/images/casino-t14/image2.png",
+            "/images/casino-t14/image3.png",
+            "/images/casino-t14/image4.png",
+            "/images/casino-t14/image5.png",
+            "/images/casino-t14/image6.png"
+          ],
+          "tags": [
+            "casino",
+            "template",
+            "new"
+          ],
+          "status": "completed",
+          "features": [
+            "Responsive Design",
+            "Modern UI",
+            "Template Generated"
+          ]
+        },
+        {
+          "id": 15,
+          "templateId": "casino-t15",
+          "title": "Casino t15",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t15/",
+          "author": "Developer",
+          "author_img": "/images/authors/default.jpg",
+          "plan": "free",
+          "category": "Casino",
+          "description": "New casino template based on front-cms-casino/casino-t1",
+          "images": [
+            "/images/casino-t15/image1.png",
+            "/images/casino-t15/image2.png",
+            "/images/casino-t15/image3.png",
+            "/images/casino-t15/image4.png",
+            "/images/casino-t15/image5.png",
+            "/images/casino-t15/image6.png"
+          ],
+          "tags": [
+            "casino",
+            "template",
+            "new"
+          ],
+          "status": "completed",
+          "features": [
+            "Responsive Design",
+            "Modern UI",
+            "Template Generated"
+          ]
+        },
+        {
+          "id": 16,
+          "templateId": "casino-t16",
+          "title": "Casino t16",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-casino/casino-t16/",
+          "author": "Developer",
+          "author_img": "/images/authors/default.jpg",
+          "plan": "free",
+          "category": "Casino",
+          "description": "New casino template based on front-cms-casino/casino-t1",
+          "images": [
+            "/images/casino-t16/image1.png",
+            "/images/casino-t16/image2.png",
+            "/images/casino-t16/image3.png",
+            "/images/casino-t16/image4.png",
+            "/images/casino-t16/image5.png",
+            "/images/casino-t16/image6.png"
+          ],
           "tags": [
             "casino",
             "template",
@@ -296,9 +469,11 @@
       "count": 3,
       "projects": [
         {
+          "deploy": true,
           "id": 1,
           "title": "Tipsters T1 - Solo Nav y Footer",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-tipsters/tipsters-t1/",
+          "slug": "front-cms-tipsters/tipsters-t1/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-tipsters/tipsters-t1/",
           "author": "juank",
           "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
           "plan": "pro",
@@ -322,9 +497,11 @@
           "templateId": "tipsters-t1"
         },
         {
+          "deploy": false,
           "id": 2,
           "title": "Tipsters T2 - Solo Nav y Footer",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-tipsters/tipsters-t2/",
+          "slug": "front-cms-tipsters/tipsters-t2/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-tipsters/tipsters-t2/",
           "author": "juank",
           "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
           "plan": "free",
@@ -348,9 +525,11 @@
           "templateId": "tipsters-t2"
         },
         {
+          "deploy": false,
           "id": 3,
           "title": "Tipsters T3 - Template clásica con hero",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-tipsters/tipsters-t3/",
+          "slug": "front-cms-tipsters/tipsters-t3/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-tipsters/tipsters-t3/",
           "author": "juank",
           "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
           "plan": "free",
@@ -375,6 +554,31 @@
             "Classic Design"
           ],
           "templateId": "tipsters-t3"
+        },
+        {
+          "id": 4,
+          "templateId": "tipsters-t4",
+          "title": "Tipsters T4",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-tipsters/tipsters-t4/",
+          "author": "Developer",
+          "author_img": "/images/authors/default.jpg",
+          "plan": "free",
+          "category": "Casino",
+          "description": "New tipsters template based on front-cms-tipsters/tipsters-t4",
+          "images": [
+            "/images/tipsters-t4/image1.png"
+          ],
+          "tags": [
+            "casino",
+            "template",
+            "new"
+          ],
+          "status": "completed",
+          "features": [
+            "Responsive Design",
+            "Modern UI",
+            "Template Generated"
+          ]
         }
       ]
     },
@@ -384,9 +588,11 @@
       "count": 2,
       "projects": [
         {
+          "deploy": true,
           "id": 1,
           "title": "News T1",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-news/news-t1/",
+          "slug": "front-cms-news/news-t1/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-news/news-t1/",
           "author": "juank",
           "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
           "plan": "pro",
@@ -412,9 +618,11 @@
           "templateId": "news-t1"
         },
         {
+          "deploy": false,
           "id": 2,
           "title": "News T2 (Inacabada)",
-          "origin": "/c/Users/juank/juank/interamplify/front-cms/front-cms-news/news-t2/",
+          "slug": "front-cms-news/news-t2/",
+          "origin": "C:/Users/juank/Desktop/juank-templates/resources/app.asar.unpacked/dist-ts/front-cms/front-cms-news/news-t2/",
           "author": "juank",
           "author_img": "https://avatars.githubusercontent.com/u/85164911?v=4",
           "plan": "free",
