@@ -176,8 +176,48 @@ const totalImages = allProjects.reduce(
 				<!-- Filter Buttons -->
 				<ProjectFilter categories={categories} />
 
+				<!-- Column Control -->
+				<div class="flex justify-center items-center gap-3 mb-8">
+					<span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+						Columnas:
+					</span>
+					<div class="flex gap-2 bg-white dark:bg-gray-800 p-1 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+						<button
+							class="column-btn px-3 py-1.5 rounded text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+							data-columns="1"
+						>
+							1
+						</button>
+						<button
+							class="column-btn px-3 py-1.5 rounded text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+							data-columns="2"
+						>
+							2
+						</button>
+						<button
+							class="column-btn px-3 py-1.5 rounded text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300"
+							data-columns="3"
+						>
+							3
+						</button>
+						<button
+							class="column-btn px-3 py-1.5 rounded text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+							data-columns="4"
+						>
+							4
+						</button>
+						<button
+							class="column-btn px-3 py-1.5 rounded text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+							data-columns="5"
+						>
+							5
+						</button>
+					</div>
+				</div>
+
 				<!-- Projects Grid -->
 				<div
+					id="projects-grid"
 					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
 				>
 					{
@@ -378,4 +418,68 @@ const totalImages = allProjects.reduce(
 		<!-- Project Modals -->
 		{allProjects.map((project) => <ProjectModal project={project} />)}
 	</main>
+
+	<script>
+		function initializeColumnControl() {
+			const columnButtons = document.querySelectorAll('.column-btn');
+			const projectsGrid = document.getElementById('projects-grid');
+			
+			// Column class mappings
+			const columnClasses = {
+				'1': 'grid-cols-1',
+				'2': 'grid-cols-1 md:grid-cols-2',
+				'3': 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+				'4': 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4',
+				'5': 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'
+			};
+
+			columnButtons.forEach(button => {
+				button.addEventListener('click', () => {
+					const columns = button.getAttribute('data-columns');
+					if (!columns) return;
+					
+					// Remove active state from all buttons
+					columnButtons.forEach(btn => {
+						btn.classList.remove('bg-purple-100', 'dark:bg-purple-900/30', 'text-purple-700', 'dark:text-purple-300');
+						btn.classList.add('text-gray-700', 'dark:text-gray-300');
+					});
+					
+					// Add active state to clicked button
+					button.classList.add('bg-purple-100', 'dark:bg-purple-900/30', 'text-purple-700', 'dark:text-purple-300');
+					button.classList.remove('text-gray-700', 'dark:text-gray-300');
+					
+					// Remove all column classes
+					if (projectsGrid) {
+						Object.values(columnClasses).forEach((classString: string) => {
+							classString.split(' ').forEach((cls: string) => {
+								projectsGrid.classList.remove(cls);
+							});
+						});
+						
+						// Add new column classes
+						const newClasses = columnClasses[columns as keyof typeof columnClasses].split(' ');
+						newClasses.forEach((cls: string) => {
+							projectsGrid.classList.add(cls);
+						});
+						
+						// Save preference to localStorage
+						localStorage.setItem('gridColumns', columns);
+					}
+				});
+			});
+			
+			// Load saved preference
+			const savedColumns = localStorage.getItem('gridColumns') || '3';
+			const savedButton = document.querySelector(`[data-columns="${savedColumns}"]`) as HTMLButtonElement;
+			if (savedButton) {
+				savedButton.click();
+			}
+		}
+
+		// Initialize on page load
+		document.addEventListener('DOMContentLoaded', initializeColumnControl);
+		
+		// Re-initialize on navigation (for SPA behavior)
+		document.addEventListener('astro:page-load', initializeColumnControl);
+	</script>
 </Layout>
